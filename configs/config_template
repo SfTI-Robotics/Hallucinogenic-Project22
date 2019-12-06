@@ -1,0 +1,55 @@
+{
+  "_algorithm comment": "DQN, DoubleDQN, DuelingDQN, PolicyGradient or ActorCritic",
+  "algorithm": "PPO",
+  "_environment_comment": "Classic Control: CartPole-v1, Atari: Breakout-v0, Enduro-v0, MsPacman-v0, Pong-v0, SpaceInvaders-v0",
+  "environment": "Pong-v0",
+
+  "steps": 100000000,
+  "_memory_size_comment": "maximum number of (state, action, reward, next_state, done)-tuples that can be saved at one point",
+  "memory_size": 128,
+  "_network_train_frequency_comment": "1 for classic control environments, 4 for atari environments",
+  "network_train_frequency": 4,
+  "_learning_rate_comment": "influence of new information on current network",
+  "learning_rate": 0.00025,
+  "_gamma_comment": "discount factor (range 0.8 to 0.9997)",
+  "gamma": 0.99,
+  "_reward_clipping_comment": "used to clip rewards to {-1, 1} (true, false)",
+  "reward_clipping": true,
+
+  "save_model": false,
+  "load_model": false,
+  "save_gif": true,
+  "save_tensorboard_summary": true,
+
+  "save_plot_frequency": 10000,
+  "save_model_frequency": 100000,
+  "save_gif_frequency": 50000,
+  "test_frequency": 10000,
+  "model_file": "",
+
+  "_batch_comment": "number of tuples for network update (range 4 to 4096) (DQN, DoubleDQN, DuelingDQN, PPO)",
+  "batch_size": 32,
+
+  "_target_update_frequency_comment": "for algorithms with target network (DQN, DoubleDQN)",
+  "target_update_frequency": 10000,
+
+  "_epsilon_greedy_comment": "for algorithms with epsilon-greedy strategy (DQN, DoubleDQN, DuelingDQN)",
+  "_initial_exploration_steps_comment": "amount of initial random actions",
+  "initial_exploration_steps": 10000,
+  "_epsilon_comment": "initial probability of random actions",
+  "epsilon": 1.0,
+  "_epsilon_min_comment": "minimum probability of random actions",
+  "epsilon_min": 0.1,
+  "_epsilon_explore_comment": "number of steps until epsilon is reduced to epsilon_min",
+  "epsilon_explore": 1000,
+
+  "_ppo_comment": "For Proximal Policy Optimization (PPO)",
+  "_clipping_loss_ratio_comment": "clipping parameter to avoid large policy update (range 0.1 to 0.3)",
+  "clipping_loss_ratio": 0.1,
+  "_lambda_comment": "discount factor of advantages for ppo actor network updates (range 0.9 to 1)",
+  "lambda": 0.95,
+  "_epochs_comment": "number of optimizing epochs per network update (range 3 to 30)",
+  "epochs": 3,
+  "_horizon_comment": "number of steps between network updates (range 32 to 5000)",
+  "horizon": 256
+}
